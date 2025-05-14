@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "EditorSession",
+    "description": "Defines a workspace for a single file",
+    "type": "object",
+    "required": [
+        "file_path",
+        "order",
+        "session_type",
+        "layout_template",
+        "layout_instance"
+    ],
+    "allOf": [
+        {
+            "$ref": "./common-props.schema.json"
+        },
+        {
+            "properties": {
+                "file_path": {
+                    "type": "string",
+                    "description": "Path to the in-work file for the session"
+                },
+                "order": {
+                    "type": "number",
+                    "description": "Tab order for the editor session panel"
+                },
+                "session_type": {
+                    "type": "string",
+                    "description": "What type of editor session is it (i.e, character, world lore, etc..)"
+                },
+                "layout_template": {
+                    "$ref": "./layout-template.schema.json"
+                },
+                "layout_instance": {
+                    "$ref": "./layout-template.schema.json"
+                },
+                "tooltip": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

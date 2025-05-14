@@ -1,0 +1,14 @@
+(node:1625782) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Issue in line 186: quicktype cannot infer this type because there is no data about it in the input.
+186: 	Default                                                                                     interface{}          `json:"default"`
+
+Issue in line 205: quicktype cannot infer this type because there is no data about it in the input.
+205: 	Equals interface{} `json:"equals"`
+
+Issue in line 237: quicktype cannot infer this type because there is no data about it in the input.
+237: 	NewValue                                                                                    interface{} `json:"new_value"`
+
+Issue in line 238: quicktype cannot infer this type because there is no data about it in the input.
+238: 	OldValue                                                                                    interface{} `json:"old_value"`

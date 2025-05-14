@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "AppStateChange",
+    "type": "object",
+    "description": "Tracks an atomic change in the app state data",
+    "allOf": [
+        {
+            "$ref": "./common-props.schema.json"
+        },
+        {
+            "properties": {
+                "editor_session_id": {
+                    "type": "string",
+                    "description": "ID of the editor session the change belonged to"
+                },
+                "tab_id": {
+                    "type": "string",
+                    "description": "ID of the editor session sub-tab the change belonged to"
+                },
+                "widget_id": {
+                    "type": "string",
+                    "description": "ID of the widget the change belonged to"
+                },
+                "property_path": {
+                    "type": "array",
+                    "description": "Nested property path to the changed value",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "old_value": {},
+                "new_value": {}
+            }
+        }
+    ],
+    "definitions": {
+        "JsonAnyType": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "object"
+                },
+                {
+                    "type": "array"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "AppState",
+    "type": "object",
+    "description": "Used for tracking the overall state of the app",
+    "required": [
+        "active_sessions",
+        "change_store"
+    ],
+    "allOf": [
+        {
+            "$ref": "./common-props.schema.json"
+        },
+        {
+            "properties": {
+                "active_sessions": {
+                    "type": "array",
+                    "description": "Open editor session tabs",
+                    "items": {
+                        "$ref": "./editor-session.schema.json"
+                    }
+                },
+                "change_store": {
+                    "type": "array",
+                    "description": "Log of recent changes in app",
+                    "items": {
+                        "$ref": "./state-change.schema.json"
+                    }
+                },
+                "auto_save": {
+                    "type": "boolean",
+                    "description": "Auto save the current session"
+                },
+                "auto_save_interval": {
+                    "type": "integer",
+                    "description": "Interval in seconds for auto save"
+                },
+                "save_on_exit": {
+                    "type": "boolean",
+                    "description": "Save the current session on exit"
+                },
+                "save_on_edit": {
+                    "type": "boolean",
+                    "description": "Save the current session on edit"
+                },
+                "meta_fields": {
+                    "$ref": "./common-props.schema.json"
+                }
+            }
+        }
+    ]
+}

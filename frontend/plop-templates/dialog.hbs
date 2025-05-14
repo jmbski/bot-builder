@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import type { FormValues, SimpleWidget } from '@/types';
+import DynamicForm from '../layout/DynamicForm.vue';
+import { inject, onMounted, type Ref } from 'vue';
+import type { DynamicDialogInstance } from 'primevue/dynamicdialogoptions';
+import FormService from '@/services/form.service';
+
+const dialogRef: Ref<DynamicDialogInstance> | undefined = inject('dialogRef');
+
+const widgets: SimpleWidget[] = dialogRef?.value.data.widgets ?? [];
+
+function onSubmit(formRefs: FormValues) {
+    const formValues = FormService.parseFormValues(formRefs);
+    console.log('values:', formValues);
+}
+
+function onCancel(event?: unknown) {
+    dialogRef?.value.close()
+}
+</script>
+
+<template>
+    <div class="{{kebabCase name}}">
+        <DynamicForm v-if="widgets" :widgets="widgets" @submit="onSubmit($event)" @cancel="onCancel($event)"/>
+    </div>
+</template>
+
+<style scoped>
+.{{kebabCase name}} {
+    /* styles for FormDialog */
+}
+</style>

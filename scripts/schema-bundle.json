@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "EditorSession": {
+            "$ref": "./editor-session.schema.json"
+        },
+        "LayoutTemplate": {
+            "$ref": "./layout-template.schema.json"
+        },
+        "TabDefinition": {
+            "$ref": "./tab.schema.json"
+        },
+        "WidgetDefinition": {
+            "$ref": "./widget.schema.json"
+        }
+    }
+}

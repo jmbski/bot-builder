@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "TabDef",
+    "description": "Defines the contents and purpose of a UI Tab panel",
+    "type": "object",
+    "required": [
+        "type",
+        "title",
+        "order"
+    ],
+    "allOf": [
+        {
+            "$ref": "./common-props.schema.json"
+        },
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "meta",
+                        "compound",
+                        "single_field",
+                        "text_list",
+                        "system",
+                        "lorebook"
+                    ]
+                },
+                "title": {
+                    "type": "string"
+                },
+                "field": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "stringify": {
+                    "type": "boolean"
+                },
+                "order": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "tooltip": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

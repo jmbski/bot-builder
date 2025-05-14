@@ -1,0 +1,17 @@
+<script setup lang="ts">
+const props = defineProps<{
+    _data: Record<string, unknown>
+}>()
+</script>
+
+<template>
+    <div class="{{kebabCase name}}">
+        <!-- {{pascalCase name}} component -->
+    </div>
+</template>
+
+<style scoped>
+.{{kebabCase name}} {
+    /* styles for {{pascalCase name}} */
+}
+</style>

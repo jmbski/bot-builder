@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "LayoutTemplate",
+    "description": "General template for the structure of the UI for an editor sessionm",
+    "type": "object",
+    "required": [
+        "name",
+        "tabs",
+        "widgets"
+    ],
+    "allOf": [
+        {
+            "$ref": "./common-props.schema.json"
+        },
+        {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string"
+                },
+                "tabs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "./tab.schema.json"
+                    }
+                },
+                "widgets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "./widget.schema.json"
+                    }
+                }
+            }
+        }
+    ]
+}
